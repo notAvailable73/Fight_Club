@@ -8,7 +8,6 @@ public class mainMenu : MonoBehaviour
 {
     public void quitGame()
     {
-        Debug.Log("ASD");
         Application.Quit();
     }
     public void playGame()
