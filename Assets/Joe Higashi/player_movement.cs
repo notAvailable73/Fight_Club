@@ -11,9 +11,10 @@ public class player_movement : MonoBehaviour
     private SpriteRenderer sprite;
     float moveSpeed = 9f;
     float jumpForse = 14f;
-    private enum movementState { idle,walking,jumping,punching};
+    private enum movementState {idle,walking,jumping,punching,kicking};
     [SerializeField] private LayerMask jumpableground;
-
+    movementState state;
+    
 
 
     void Start()
@@ -30,29 +31,35 @@ public class player_movement : MonoBehaviour
          dirx = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(dirx * moveSpeed, rb.velocity.y);
 
-        if(Input.GetKeyDown("space") )
+        if(Input.GetKeyDown("space"))
         {
            rb.velocity=new Vector2(rb.velocity.x,jumpForse);
 
         }
+        animator.SetInteger("state", (int)state);
+         if (Input.GetKeyDown(KeyCode.P) )
+        {
+            state=movementState.punching;
+        }
+        
         animationUpdate();
-       
+        
 
 
     }
     public void animationUpdate()
     {
-        movementState state;
+        
 
         if (dirx > 0f)
         {
            state=movementState.walking;
-            sprite.flipX = false;
+            
         }
         else if (dirx < 0f)
         {
             state = movementState.walking;
-            sprite.flipX = true;
+            
 
         }
         else
@@ -65,7 +72,11 @@ public class player_movement : MonoBehaviour
         {
             state = movementState.jumping;
         }
+        
+
+        
+
         animator.SetInteger("state", (int)state);
     }
-     
+
 }
