@@ -37,10 +37,7 @@ public class player_movement : MonoBehaviour
 
         }
         animator.SetInteger("state", (int)state);
-         if (Input.GetKeyDown(KeyCode.P) )
-        {
-            state=movementState.punching;
-        }
+        
         
         animationUpdate();
         
@@ -49,8 +46,12 @@ public class player_movement : MonoBehaviour
     }
     public void animationUpdate()
     {
-        
 
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            state = movementState.punching;
+        }
         if (dirx > 0f)
         {
            state=movementState.walking;
