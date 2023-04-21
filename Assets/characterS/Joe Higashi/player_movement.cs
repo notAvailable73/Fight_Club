@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class player_movement : MonoBehaviour
 {
-    Rigidbody2D rb;
-    private BoxCollider2D bc;
-    private Animator animator;
-    float dirx=0;
-    private SpriteRenderer sprite;
-    float moveSpeed = 9f;
-    float jumpForse = 14f;
-    private enum movementState {idle,walking,jumping,punching,kicking};
-    [SerializeField] private LayerMask jumpableground;
-    movementState state;
+    internal Rigidbody2D rb;
+    internal BoxCollider2D bc;
+    internal Animator animator;
+    internal float dirx =0;
+    internal SpriteRenderer sprite;
+    internal float moveSpeed = 9f;
+    internal float jumpForse = 14f;
+    internal enum movementState {idle,walking,jumping,punching,kicking};
+    [SerializeField] internal LayerMask jumpableground;
+    internal movementState state;
     
 
 
