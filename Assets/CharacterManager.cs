@@ -1,10 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
-using UnityEngine.UI;
+using UnityEngine;
 using UnityEngine.SceneManagement;
-using static System.Net.Mime.MediaTypeNames;
 
 public class CharacterManager : MonoBehaviour
 {
@@ -13,18 +9,22 @@ public class CharacterManager : MonoBehaviour
     [SerializeField]
     public TextMeshProUGUI characterName;
     public int selectedOption;
+    
+
     void Start()
     {
-        if (!PlayerPrefs.HasKey("selectedOption"))
-        {
-            selectedOption = 0;
-        }
-        else
-        {
-            Load();
-        }
+        staticClass.player1selected = 0;
+        selectedOption = staticClass.player1selected;
+        //if (!PlayerPrefs.HasKey("selectedOption"))
+        //{
+        //    selectedOption = 0;
+        //}
+        //else
+        //{
+        //    Load();
+        //}
         updateCH(selectedOption);
-         
+
     }
     public void next()
     {
@@ -39,9 +39,9 @@ public class CharacterManager : MonoBehaviour
     public void prev()
     {
         selectedOption--;
-        if (selectedOption < 0 )
+        if (selectedOption < 0)
         {
-            selectedOption = CharacterDB.characterCount-1;
+            selectedOption = CharacterDB.characterCount - 1;
         }
         updateCH(selectedOption);
         save();
@@ -58,11 +58,8 @@ public class CharacterManager : MonoBehaviour
     }
     private void save()
     {
-        PlayerPrefs.SetInt("selectedOption", selectedOption);
-    }
-    public void ChangeScene(int sceneID)
-    {
-        SceneManager.LoadScene(sceneID);
+        //PlayerPrefs.SetInt("selectedOption", selectedOption);
+        staticClass.player1selected = selectedOption;
     }
     
 }

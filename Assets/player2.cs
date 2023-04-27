@@ -1,19 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
-public class player1 : MonoBehaviour
+public class player2 : MonoBehaviour
 {
-    public CharacterDatabase CharacterDB;
+    public CharacterDatabase CharacterDB;//public SpriteRenderer artworkSprite;
     public GameObject characterObject;
     public int selectedOption = 0;
 
-    
+    // Start is called before the first frame update
     void Start()
     {
-        selectedOption = staticClass.player1selected;
-        //if (!PlayerPrefs.HasKey("selectedOption"))
+        selectedOption = staticClass.player2selected;
+        //if (!PlayerPrefs.HasKey("selectedOption2"))
         //{
         //    selectedOption = 0;
         //}
@@ -32,9 +31,6 @@ public class player1 : MonoBehaviour
     }
     //private void Load()
     //{
-    //    selectedOption = PlayerPrefs.GetInt("selectedOption");
+    //    selectedOption = PlayerPrefs.GetInt("selectedOption2");
     //}
 }
-
-
-
