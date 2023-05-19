@@ -13,14 +13,6 @@ public class player1 : MonoBehaviour
     void Start()
     {
         selectedOption = staticClass.player1selected;
-        //if (!PlayerPrefs.HasKey("selectedOption"))
-        //{
-        //    selectedOption = 0;
-        //}
-        //else
-        //{
-        //    Load();
-        //}
         updateCH(selectedOption);
         Instantiate(characterObject);
     }
@@ -28,12 +20,7 @@ public class player1 : MonoBehaviour
     {
         Character character = CharacterDB.GetCharacter(selectedOption);
         this.characterObject = character.characterObject;
-        //this.artworkSprite.sprite = character.characterSprite;
     }
-    //private void Load()
-    //{
-    //    selectedOption = PlayerPrefs.GetInt("selectedOption");
-    //}
 }
 
 

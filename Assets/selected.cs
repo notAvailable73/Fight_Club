@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -19,11 +17,67 @@ public class selected : MonoBehaviour
 
     void Update()
     {
-        ChangeScene(2);
+        selection();
+    }
+    public void selection()
+    {
+        if (isbothPlayerSelected())
+        {
+            ChangeScene(2);
+        }
+    }
+    public bool isbothPlayerSelected()
+    {
+        return isPlayer1Selected && isPlayer2Selected;
     }
     public void ChangeScene(int sceneID)
     {
-        if (isPlayer1Selected == true && isPlayer2Selected == true)
+        if (staticClass.player1selected == 0 && staticClass.player2selected == 0)
+        {
+            SceneManager.LoadScene(sceneID); //alif alif
+        }
+        else if (staticClass.player1selected == 0 && staticClass.player2selected == 1)
+        {
+            SceneManager.LoadScene(sceneID); //alif vs emon
+        }
+        else if (staticClass.player1selected == 0 && staticClass.player2selected == 2)
+        {
+            SceneManager.LoadScene(sceneID); //alif vs mainul
+        }
+        else if (staticClass.player1selected == 1 && staticClass.player2selected == 0)
+        {
+            SceneManager.LoadScene(sceneID); //emon vs alif
+        }
+        else if (staticClass.player1selected == 1 && staticClass.player2selected == 1)
+        {
+            SceneManager.LoadScene(sceneID); //emon vs emon
+        }
+        else if (staticClass.player1selected == 1 && staticClass.player2selected == 2)
+        {
+            SceneManager.LoadScene(sceneID); //emon vs mainul
+        }
+        else if (staticClass.player1selected == 2 && staticClass.player2selected == 0)
+        {
+            SceneManager.LoadScene(sceneID); //mainul vs alif
+
+        }
+        else if (staticClass.player1selected == 2 && staticClass.player2selected == 1)
+        {
+            SceneManager.LoadScene(sceneID); //mainul vs emon
+        }
+        else if (staticClass.player1selected == 2 && staticClass.player2selected == 2)
+        {
+            SceneManager.LoadScene(sceneID); //mainul vs mainul
+        }
+        else if (staticClass.player1selected == 0 && staticClass.player2selected == 2)
+        {
+            SceneManager.LoadScene(sceneID);
+        }
+        else if (staticClass.player1selected == 0 && staticClass.player2selected == 2)
+        {
+            SceneManager.LoadScene(sceneID);
+        }
+        else if (staticClass.player1selected == 0 && staticClass.player2selected == 2)
         {
             SceneManager.LoadScene(sceneID);
         }
