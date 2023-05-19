@@ -9,22 +9,11 @@ public class sChManager : MonoBehaviour
     public SpriteRenderer artworkSprite;
     [SerializeField]
     public TextMeshProUGUI characterName;
-    //public int selectedOption;
+    
 
 
     void Start()
     {
-        //staticClass.player2selected = 0;
-        //selectedOption = staticClass.player2selected;
-
-        //if (!PlayerPrefs.HasKey("selectedOption2"))
-        //{
-        //    selectedOption = 0;
-        //}
-        //else
-        //{
-        //    Load();
-        //}
         updateCH(staticClass.player2selected);
 
     }
@@ -54,13 +43,4 @@ public class sChManager : MonoBehaviour
         characterName.text = character.characterName;
         artworkSprite.sprite = character.characterSprite;
     }
-    //private void Load()
-    //{
-    //    selectedOption = PlayerPrefs.GetInt("selectedOption2");
-    //}
-    //private void save()
-    //{
-    //    //PlayerPrefs.SetInt("selectedOption2", selectedOption);
-    //    staticClass.player2selected = selectedOption;
-    //}
 }

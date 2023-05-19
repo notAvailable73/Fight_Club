@@ -15,14 +15,6 @@ public class CharacterManager : MonoBehaviour
     {
         staticClass.player1selected = 0;
         selectedOption = staticClass.player1selected;
-        //if (!PlayerPrefs.HasKey("selectedOption"))
-        //{
-        //    selectedOption = 0;
-        //}
-        //else
-        //{
-        //    Load();
-        //}
         updateCH(selectedOption);
 
     }
