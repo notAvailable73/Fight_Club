@@ -171,3 +171,4 @@ MonoBehaviour:
   jumpableground:
     serializedVersion: 2
     m_Bits: 0
+  obj: {fileID: 0}

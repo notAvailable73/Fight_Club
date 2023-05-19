@@ -22,7 +22,7 @@ public class player1 : MonoBehaviour
         //    Load();
         //}
         updateCH(selectedOption);
-        Instantiate(characterObject);
+        Instantiate(characterObject); 
     }
     void updateCH(int selectedOption)
     {

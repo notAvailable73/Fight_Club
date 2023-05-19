@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class player_movement : MonoBehaviour
@@ -14,13 +15,14 @@ public class player_movement : MonoBehaviour
     internal enum movementState {idle,walking,jumping,punching,kicking};
     [SerializeField] internal LayerMask jumpableground;
     internal movementState state;
+
     
 
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
+        animator = this.GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
         bc=GetComponent<BoxCollider2D>();
     }
@@ -39,8 +41,24 @@ public class player_movement : MonoBehaviour
         animator.SetInteger("state", (int)state);
         
         
-        animationUpdate();
-        
+        //animationUpdate();
+        if (Input.GetKeyDown("1"))
+        {
+            animator.SetInteger("state", 3);
+        }
+        if (Input.GetKeyDown("2"))
+        {
+            animator.SetInteger("state", 4);
+        }
+        if (Input.GetKeyDown("3"))
+        {
+            animator.SetInteger("state", 3);
+        }
+        if (Input.GetKeyDown("4"))
+        {
+            animator.SetInteger("state", 6);
+        }
+
 
 
     }
@@ -48,7 +66,7 @@ public class player_movement : MonoBehaviour
     {
 
 
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown("1"))
         {
             state = movementState.punching;
         }
@@ -79,5 +97,8 @@ public class player_movement : MonoBehaviour
 
         animator.SetInteger("state", (int)state);
     }
+    public void walk()
+    {
 
+    }
 }
