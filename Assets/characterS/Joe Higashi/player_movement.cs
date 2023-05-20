@@ -26,7 +26,7 @@ public class player_movement : MonoBehaviour
         animator = GetComponent<Animator>();
         rb2d = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        isRight = true;
+        isRight = false;
     }
 
     // Update is called once per frame
@@ -61,7 +61,11 @@ public class player_movement : MonoBehaviour
     private void FixedUpdate()
     {
 
-        
+    }
+    void jump()
+    {
+        rb2d.velocity = new Vector2(rb2d.velocity.x, jumpSpeed);
+        animator.Play("p1_Jump");
     }
     private void flip()
     {
