@@ -484,9 +484,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4351ecb7f25eb374aa0091b7788e9bb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  rb2d: {fileID: 0}
   runSpeed: 5
   jumpSpeed: 6
   groundCheck: {fileID: 1065745459}
+  punchPoint: {fileID: 0}
+  kickPoint: {fileID: 0}
+  kickpoint2: {fileID: 0}
+  kickpoint3: {fileID: 0}
+  kickpoint4: {fileID: 0}
+  punchRadius: 0
+  kickRadius: 0
+  kickradius2: 0
+  kickradius3: 0
+  kickradius4: 0
+  opponents:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!61 &558311081
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -669,6 +684,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2904584502712215794, guid: 29850d6c762025344aacc07f98db8932, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: ec0925726472da34d8aa888abaa453ac, type: 2}
     - target: {fileID: 2904584502712215795, guid: 29850d6c762025344aacc07f98db8932, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -679,7 +698,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2904584502712215804, guid: 29850d6c762025344aacc07f98db8932, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29850d6c762025344aacc07f98db8932, type: 3}
