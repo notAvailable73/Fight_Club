@@ -6,4 +6,6 @@ public static class staticClass
 {
     public static int player1selected=0;
     public static int player2selected=0;
+    public static float player1Health;
+    public static float player2Health;
 }
