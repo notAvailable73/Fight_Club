@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 235341}
   m_Layer: 0
-  m_Name: kickpoint4
+  m_Name: attackpoint5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -147,7 +147,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 235340}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.903, y: -0.587, z: 0}
+  m_LocalPosition: {x: -2.23, y: 0.004, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -240,7 +240,7 @@ GameObject:
   m_Component:
   - component: {fileID: 204600915}
   m_Layer: 0
-  m_Name: kickPoint2
+  m_Name: attackpoint3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -254,7 +254,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 204600914}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.799, y: -0.37, z: 0}
+  m_LocalPosition: {x: -0.21, y: -0.503, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -852,7 +852,7 @@ GameObject:
   m_Component:
   - component: {fileID: 549535531}
   m_Layer: 0
-  m_Name: kickpoint1
+  m_Name: attackpoint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -866,7 +866,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 549535530}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.281, y: -0.894, z: 0}
+  m_LocalPosition: {x: -0.64, y: -0.389, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1026,16 +1026,16 @@ MonoBehaviour:
   runSpeed: 5
   jumpSpeed: 5
   groundCheck: {fileID: 0}
-  punchPoint: {fileID: 673532920}
-  kickPoint: {fileID: 549535530}
-  kickpoint2: {fileID: 204600914}
-  kickpoint3: {fileID: 652906299}
-  kickpoint4: {fileID: 235340}
-  punchRadius: 1
-  kickRadius: 1.15
-  kickradius2: 1.28
-  kickradius3: 1.13
-  kickradius4: 1.35
+  attackpoint1: {fileID: 673532920}
+  attackpoint2: {fileID: 549535530}
+  attackpoint3: {fileID: 204600914}
+  attackpoint4: {fileID: 652906299}
+  attackpoint5: {fileID: 235340}
+  attacRadius1: 1.21
+  attacRadius2: 1.71
+  attacRadius3: 2.06
+  attacRadius4: 0.95
+  attacRadius5: 0
   opponents:
     serializedVersion: 2
     m_Bits: 64
@@ -1194,7 +1194,7 @@ GameObject:
   m_Component:
   - component: {fileID: 652906300}
   m_Layer: 0
-  m_Name: kickpoint3
+  m_Name: attackpoint4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1208,7 +1208,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 652906299}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.379, y: -0.647, z: 0}
+  m_LocalPosition: {x: -0.56, y: -0.342, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1225,7 +1225,7 @@ GameObject:
   m_Component:
   - component: {fileID: 673532921}
   m_Layer: 0
-  m_Name: punchPoint
+  m_Name: attackpoint1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1239,7 +1239,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 673532920}
   m_LocalRotation: {x: -0, y: -0, z: 0.00034529547, w: 0.99999994}
-  m_LocalPosition: {x: -0.56, y: -0.417, z: 0}
+  m_LocalPosition: {x: -0.26, y: -0.941, z: 0}
   m_LocalScale: {x: 0.30100402, y: 0.11090968, z: 0.75251}
   m_ConstrainProportionsScale: 0
   m_Children: []

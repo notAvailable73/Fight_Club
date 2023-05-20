@@ -25,7 +25,7 @@ public class player_movement : MonoBehaviour
         animator = GetComponent<Animator>();
         rb2d = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        isRight = true;
+        isRight = false;
     }
 
     // Update is called once per frame
@@ -54,29 +54,30 @@ public class player_movement : MonoBehaviour
     private void FixedUpdate()
     {
 
-        float dirx = Input.GetAxis("jHorizontal");
 
 
-        if (Input.GetButtonDown("jHorizontal"))
+        if (Input.GetKey("jHorizontal"))
         {
-            
-           
-            rb2d.velocity = new Vector2(dirx*runSpeed, rb2d.velocity.y);
-            animator.Play("p1_walk");
+            rb2d.velocity = new Vector2(runSpeed, rb2d.velocity.y);
+            animator.Play("walk");
 
         }
-        else if (Input.GetButtonDown("jHorizontal"))
+        else if (Input.GetKey("a"))
         {
             rb2d.velocity = new Vector2(-runSpeed, rb2d.velocity.y);
-            animator.Play("p1_walk");
+            animator.Play("walk");
 
         }
 
-        if (Input.GetButtonDown("Jump1") )
+        if (Input.GetKeyDown("space") && !(animator.GetBool("isjumping")))
         {
-            rb2d.velocity = new Vector2(rb2d.velocity.x, jumpSpeed);
-            animator.Play("p1_Jump");
+            jump();
         }
+    }
+    void jump()
+    {
+        rb2d.velocity = new Vector2(rb2d.velocity.x, jumpSpeed);
+        animator.Play("p1_Jump");
     }
     private void flip()
     {

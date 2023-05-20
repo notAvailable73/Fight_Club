@@ -12,9 +12,9 @@ public class Movement : MonoBehaviour
     [SerializeField]
     Transform groundCheck;
     private bool isRight;
-    public GameObject punchPoint , kickPoint,kickpoint2, kickpoint3,kickpoint4;
-    public float punchRadius;
-    public float kickRadius, kickradius2, kickradius3,kickradius4;
+    public GameObject attackpoint1, attackpoint2, attackpoint3, attackpoint4, attackpoint5;
+    public float attacRadius1;
+    public float attacRadius2, attacRadius3, attacRadius4, attacRadius5;
     public LayerMask opponents;
 
     void Start()
@@ -44,7 +44,7 @@ public class Movement : MonoBehaviour
 
         if (Input.GetButtonDown("Fire3"))
         {
-            animator.Play("Swift_Kick");
+            animator.Play("Knife");
         }
 
 
@@ -82,41 +82,60 @@ public class Movement : MonoBehaviour
             transform.localScale = localScale;
         }
     }
-    void endJump()
-    {
-        animator.SetBool("isjumping", false);
-
-    }
+    
     void jump()
     {
         rb2d.velocity = new Vector2(rb2d.velocity.x, jumpSpeed);
         animator.Play("Jump");
-        animator.SetBool("isjumping", true);
     }
-    public void punch()
+    public void attack1()
     {
-        Collider2D[] opponent = Physics2D.OverlapCircleAll(punchPoint.transform.position, punchRadius, opponents);
+        Collider2D[] opponent = Physics2D.OverlapCircleAll(attackpoint1.transform.position, attacRadius1, opponents);
         foreach (Collider2D opponentObject in opponent)
         {
-            damage(10);
+            damage(2);
         }
     }
-    public void kick()
+    public void attack2()
     {
-        Collider2D[] opponent = Physics2D.OverlapCircleAll(kickPoint.transform.position, kickRadius, opponents);
+        Collider2D[] opponent = Physics2D.OverlapCircleAll(attackpoint2.transform.position, attacRadius2, opponents);
+        foreach (Collider2D opponentObject in opponent)
+        {
+            damage(13);
+        }
+    }
+    public void attack3()
+    {
+        Collider2D[] opponent = Physics2D.OverlapCircleAll(attackpoint3.transform.position, attacRadius3, opponents);
         foreach (Collider2D opponentObject in opponent)
         {
             damage(20);
         }
     }
-    //private void OnDrawGizmos()
+    public void attack4()
+    {
+        Collider2D[] opponent = Physics2D.OverlapCircleAll(attackpoint4.transform.position, attacRadius4, opponents);
+        foreach (Collider2D opponentObject in opponent)
+        {
+            damage(4);
+        }
+    }
+    //public void attack5()
     //{
-    //    Gizmos.DrawWireSphere(punchPoint.transform.position, punchRadius);
-    //    Gizmos.DrawWireSphere(kickPoint.transform.position, kickRadius);
-    //    Gizmos.DrawWireSphere(kickpoint2.transform.position, kickradius2);
-    //    Gizmos.DrawWireSphere(kickpoint3.transform.position, kickradius3);
-    //    Gizmos.DrawWireSphere(kickpoint4.transform.position, kickradius4);
+    //    Collider2D[] opponent = Physics2D.OverlapCircleAll(attackpoint5.transform.position, attacRadius5, opponents);
+    //    foreach (Collider2D opponentObject in opponent)
+    //    {
+    //        damage(20);
+    //    }
     //}
+    private void OnDrawGizmos()
+    {
+        //Gizmos.DrawWireSphere(attackpoint1.transform.position, attacRadius1);
+        //Gizmos.DrawWireSphere(attackpoint2.transform.position, attacRadius2);
+        //Gizmos.DrawWireSphere(attackpoint3.transform.position, attacRadius3);
+        //Gizmos.DrawWireSphere(attackpoint4.transform.position, attacRadius4);
+        Gizmos.DrawWireSphere(attackpoint5.transform.position, attacRadius5);
+    }
     void damage(int d)
     {
         staticClass.player2Health -= d;
