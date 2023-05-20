@@ -37,6 +37,7 @@ public class CharacterManager : MonoBehaviour
         }
         updateCH(selectedOption);
         save();
+
     }
     void updateCH(int selectedOption)
     {
