@@ -1,83 +1,91 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class player_movement : MonoBehaviour
 {
-    internal Rigidbody2D rb;
-    internal BoxCollider2D bc;
-    internal Animator animator;
-    internal float dirx =0;
-    internal SpriteRenderer sprite;
-    internal float moveSpeed = 9f;
-    internal float jumpForse = 14f;
-    internal enum movementState {idle,walking,jumping,punching,kicking};
-    [SerializeField] internal LayerMask jumpableground;
-    internal movementState state;
-    
+    Animator animator;
+    Rigidbody2D rb2d;
+    SpriteRenderer spriteRenderer;
+    bool isGrounded;
+    [SerializeField]
+    float runSpeed = 1.5f;
+    [SerializeField]
+    float jumpSpeed = 5f;
+    [SerializeField]
+   
+    private bool isRight;
+
 
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        sprite = GetComponent<SpriteRenderer>();
-        bc=GetComponent<BoxCollider2D>();
+        rb2d = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        isRight = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-         dirx = Input.GetAxisRaw("Horizontal");
-        rb.velocity = new Vector2(dirx * moveSpeed, rb.velocity.y);
-
-        if(Input.GetKeyDown("space"))
+        
+        flip();
+        if (Input.GetButtonDown("jFire1"))
         {
-           rb.velocity=new Vector2(rb.velocity.x,jumpForse);
+
+            animator.Play("p1_punch");
 
         }
-        animator.SetInteger("state", (int)state);
-        
-        
-        animationUpdate();
-        
+        if (Input.GetButtonDown("jFire2"))
+        {
+            animator.Play("p1_kick");
+        }
+
+        if (Input.GetButtonDown("jFire3"))
+        {
+            animator.Play("Swift_Kick");
+        }
 
 
     }
-    public void animationUpdate()
+    private void FixedUpdate()
     {
 
+        float dirx = Input.GetAxis("jHorizontal");
 
-        if (Input.GetKeyDown(KeyCode.P))
+
+        if (Input.GetButtonDown("jHorizontal"))
         {
-            state = movementState.punching;
-        }
-        if (dirx > 0f)
-        {
-           state=movementState.walking;
             
+           
+            rb2d.velocity = new Vector2(dirx*runSpeed, rb2d.velocity.y);
+            animator.Play("p1_walk");
+
         }
-        else if (dirx < 0f)
+        else if (Input.GetButtonDown("jHorizontal"))
         {
-            state = movementState.walking;
-            
+            rb2d.velocity = new Vector2(-runSpeed, rb2d.velocity.y);
+            animator.Play("p1_walk");
 
         }
-        else
+
+        if (Input.GetButtonDown("Jump1") )
         {
-            state = movementState.idle;
-
+            rb2d.velocity = new Vector2(rb2d.velocity.x, jumpSpeed);
+            animator.Play("p1_Jump");
         }
-
-        if (rb.velocity.y>.1f)
-        {
-            state = movementState.jumping;
-        }
-        
-
-        
-
-        animator.SetInteger("state", (int)state);
     }
-
+    private void flip()
+    {
+        if (isRight && Input.GetButtonDown("jHorizontal") || !isRight && Input.GetButtonDown("jHorizontal"))
+        {
+            isRight = !isRight;
+            Vector3 localScale = transform.localScale;
+            localScale.x *= -1f;
+            transform.localScale = localScale;
+        }
+    }
 }

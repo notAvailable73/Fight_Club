@@ -6,7 +6,7 @@ using static player_movement;
 public class Movement : MonoBehaviour
 {
      
-   Animator animator;
+    Animator animator;
     Rigidbody2D rb2d;
     SpriteRenderer spriteRenderer;
     bool isGrounded;
