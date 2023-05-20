@@ -310,7 +310,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4.7208776
+  orthographic size: 5.720213
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -334,7 +334,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.68, y: -1.1, z: -10}
+  m_LocalPosition: {x: -11.68, y: -1.39, z: -10}
   m_LocalScale: {x: 1.0354, y: 1.0354, z: 1.0354}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -484,8 +484,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4351ecb7f25eb374aa0091b7788e9bb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runSpeed: 1.5
-  jumpSpeed: 5
+  runSpeed: 5
+  jumpSpeed: 6
   groundCheck: {fileID: 1065745459}
 --- !u!61 &558311081
 BoxCollider2D:
@@ -1913,6 +1913,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1797398028}
   m_CullTransparentMesh: 1
+--- !u!50 &1804981353 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 8121425425506993256, guid: e428ba09ca156384a87595fe248dae8e, type: 3}
+  m_PrefabInstance: {fileID: 8121425425679279558}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1839363658
 GameObject:
   m_ObjectHideFlags: 0
@@ -2202,6 +2207,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8121425425506993256, guid: e428ba09ca156384a87595fe248dae8e, type: 3}
+      propertyPath: m_GravityScale
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8121425425506993258, guid: e428ba09ca156384a87595fe248dae8e, type: 3}
       propertyPath: m_Size.y
       value: 1.0478154
@@ -2209,6 +2218,22 @@ PrefabInstance:
     - target: {fileID: 8121425425506993258, guid: e428ba09ca156384a87595fe248dae8e, type: 3}
       propertyPath: m_Offset.y
       value: -0.77728504
+      objectReference: {fileID: 0}
+    - target: {fileID: 8121425425506993259, guid: e428ba09ca156384a87595fe248dae8e, type: 3}
+      propertyPath: rb2d
+      value: 
+      objectReference: {fileID: 1804981353}
+    - target: {fileID: 8121425425506993259, guid: e428ba09ca156384a87595fe248dae8e, type: 3}
+      propertyPath: speed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8121425425506993259, guid: e428ba09ca156384a87595fe248dae8e, type: 3}
+      propertyPath: runspeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8121425425506993259, guid: e428ba09ca156384a87595fe248dae8e, type: 3}
+      propertyPath: jumpspeed
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8121425425506993260, guid: e428ba09ca156384a87595fe248dae8e, type: 3}
       propertyPath: m_RootOrder
@@ -2260,7 +2285,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8121425425506993262, guid: e428ba09ca156384a87595fe248dae8e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e428ba09ca156384a87595fe248dae8e, type: 3}
