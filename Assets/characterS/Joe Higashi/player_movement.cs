@@ -15,6 +15,7 @@ public class player_movement : MonoBehaviour
     [SerializeField]
     float jumpSpeed = 5f;
     [SerializeField]
+    float dirx;
    
     private bool isRight;
 
@@ -31,7 +32,17 @@ public class player_movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //transform.Translate(Input.GetAxis("Horizontal1") * runSpeed,0, rb2d.velocity.y);
+        float dirx = Input.GetAxisRaw("Horizontal");
+        rb2d.velocity= new Vector2(dirx*runSpeed, rb2d.velocity.y);
+      
+
+        if (Input.GetButtonDown("Jump1"))
+        {
+            rb2d.velocity = new Vector2(rb2d.velocity.x, jumpSpeed);
+            animator.Play("p1_Jump");
+        }
+
         flip();
         if (Input.GetButtonDown("jFire1"))
         {
@@ -44,48 +55,16 @@ public class player_movement : MonoBehaviour
             animator.Play("p1_kick");
         }
 
-        if (Input.GetButtonDown("jFire3"))
-        {
-            animator.Play("Swift_Kick");
-        }
-
+      
 
     }
     private void FixedUpdate()
     {
 
-        float dirx = Input.GetAxis("jHorizontal");
-
-
-        if (Input.GetButtonDown("jHorizontal"))
-        {
-            
-           
-            rb2d.velocity = new Vector2(dirx*runSpeed, rb2d.velocity.y);
-            animator.Play("p1_walk");
-
-        }
-        else if (Input.GetButtonDown("jHorizontal"))
-        {
-            rb2d.velocity = new Vector2(-runSpeed, rb2d.velocity.y);
-            animator.Play("p1_walk");
-
-        }
-
-        if (Input.GetButtonDown("Jump1") )
-        {
-            rb2d.velocity = new Vector2(rb2d.velocity.x, jumpSpeed);
-            animator.Play("p1_Jump");
-        }
+        
     }
     private void flip()
     {
-        if (isRight && Input.GetButtonDown("jHorizontal") || !isRight && Input.GetButtonDown("jHorizontal"))
-        {
-            isRight = !isRight;
-            Vector3 localScale = transform.localScale;
-            localScale.x *= -1f;
-            transform.localScale = localScale;
-        }
+       
     }
 }
