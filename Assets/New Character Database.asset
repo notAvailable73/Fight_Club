@@ -19,6 +19,3 @@ MonoBehaviour:
   - characterName: Emon
     characterSprite: {fileID: 21300000, guid: c81dbf742353c8946acaa8878fa0199d, type: 3}
     characterObject: {fileID: 8121425425506993262, guid: e428ba09ca156384a87595fe248dae8e, type: 3}
-  - characterName: Mainul
-    characterSprite: {fileID: 21300000, guid: f00779debb77a3c4a8f8ddd858e8a2d6, type: 3}
-    characterObject: {fileID: 2904584502712215804, guid: 29850d6c762025344aacc07f98db8932, type: 3}
