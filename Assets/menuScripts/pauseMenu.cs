@@ -30,6 +30,10 @@ public class pauseMenu : MonoBehaviour
             }
         }
     }
+    public void Start()
+    {
+        Time.timeScale = 1f;
+    }
     public void resume()
     {
         Time.timeScale = 1f;

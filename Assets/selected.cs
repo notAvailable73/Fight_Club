@@ -21,6 +21,7 @@ public class selected : MonoBehaviour
     void Update()
     {
         selection();
+        selection2();
     }
     public void selection()
     {
@@ -33,18 +34,9 @@ public class selected : MonoBehaviour
     {
         return isPlayer1Selected && isPlayer2Selected;
     }
-    public void ChangeScene()
+    void selection2()
     {
-        
-        if (staticClass.player1selected == 0 && staticClass.player2selected == 1)
-        {
-            SceneManager.LoadScene("akvseg"); //alif vs emon
-        }
-        else if (staticClass.player1selected == 1 && staticClass.player2selected == 0)
-        {
-            SceneManager.LoadScene("agvsek"); //emon vs alif
-        }
-        else if (staticClass.player1selected == 0 && staticClass.isFirst && staticClass.keyboardSelect)
+        if (staticClass.player1selected == 0 && staticClass.isFirst && staticClass.keyboardSelect)
         {
             SceneManager.LoadScene("Alif_keyboard");
         }
@@ -60,6 +52,19 @@ public class selected : MonoBehaviour
         {
             SceneManager.LoadScene("emon_gamepad");
         }
+    }
+    public void ChangeScene()
+    {
+        
+        if (staticClass.player1selected == 0 && staticClass.player2selected == 1)
+        {
+            SceneManager.LoadScene("akvseg"); //alif vs emon
+        }
+        else if (staticClass.player1selected == 1 && staticClass.player2selected == 0)
+        {
+            SceneManager.LoadScene("agvsek"); //emon vs alif
+        }
+        
     }
     public void selectPlayer1()
     {
@@ -93,7 +98,5 @@ public class selected : MonoBehaviour
     public void singlePlayerSelection()
     {
         staticClass.isFirst = true;
-        isPlayer1Selected = true;
-        isPlayer2Selected = true;
     }
 }
