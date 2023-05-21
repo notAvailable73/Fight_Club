@@ -123,11 +123,11 @@ public class Alif_Joystick : MonoBehaviour
     //}
     private void OnDrawGizmos()
     {
-        Gizmos.DrawWireSphere(attackpoint1.transform.position, attacRadius1);
-        Gizmos.DrawWireSphere(attackpoint2.transform.position, attacRadius2);
-        Gizmos.DrawWireSphere(attackpoint3.transform.position, attacRadius3);
-        Gizmos.DrawWireSphere(attackpoint4.transform.position, attacRadius4);
-        Gizmos.DrawWireSphere(attackpoint5.transform.position, attacRadius5);
+        //Gizmos.DrawWireSphere(attackpoint1.transform.position, attacRadius1);
+        //Gizmos.DrawWireSphere(attackpoint2.transform.position, attacRadius2);
+        //Gizmos.DrawWireSphere(attackpoint3.transform.position, attacRadius3);
+        //Gizmos.DrawWireSphere(attackpoint4.transform.position, attacRadius4);
+        //Gizmos.DrawWireSphere(attackpoint5.transform.position, attacRadius5);
     }
     void damage(int d)
     {
