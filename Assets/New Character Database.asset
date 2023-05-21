@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character:
   - characterName: Alif
-    characterSprite: {fileID: 21300000, guid: 3a8ae8c0a94283047bdb3fce91b6e950, type: 3}
+    characterSprite: {fileID: 21300000, guid: d50506d260ee4934a9b4451426b98c33, type: 3}
     characterObject: {fileID: 0}
   - characterName: Emon
     characterSprite: {fileID: 21300000, guid: c81dbf742353c8946acaa8878fa0199d, type: 3}
