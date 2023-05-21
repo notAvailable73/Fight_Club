@@ -14,4 +14,8 @@ public class mainMenu : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
     }
+    public void practice()
+    {
+        SceneManager.LoadScene("KorJ");
+    }
 }
