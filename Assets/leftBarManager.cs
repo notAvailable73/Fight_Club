@@ -10,7 +10,6 @@ public class leftBarManager : MonoBehaviour
     void Start()
     {
         staticClass.player1Health = maxHealth;
-        //staticClass.player2Health = maxHealth;
         hbar.setMaxHealth(100);
     }
 

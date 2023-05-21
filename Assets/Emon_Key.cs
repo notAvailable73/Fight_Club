@@ -28,7 +28,7 @@ public class Emon_Key : MonoBehaviour
         animator = GetComponent<Animator>();
         rb2d = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        isRight = true;
+        isRight = false;
     }
 
     // Update is called once per frame
@@ -97,7 +97,7 @@ public class Emon_Key : MonoBehaviour
         Collider2D[] opponent = Physics2D.OverlapCircleAll(attackpoint1.transform.position, attacRadius1, opponents);
         foreach (Collider2D opponentObject in opponent)
         {
-            damage(2);
+            damage(13);
         }
     }
     public void attack2()

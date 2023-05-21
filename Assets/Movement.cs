@@ -13,14 +13,14 @@ public class Movement : MonoBehaviour
     Transform groundCheck;
     private bool isRight;
     public GameObject attackpoint1, attackpoint2, attackpoint3, attackpoint4, attackpoint5;
-    public float attacRadius1;
+    public float attacRadius1,health;
     public float attacRadius2, attacRadius3, attacRadius4, attacRadius5;
     public LayerMask opponents;
 
     void Start()
     {
 
-        //opponents = GetComponent<LayerMask>();
+       
         animator = GetComponent<Animator>();
         rb2d = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -30,6 +30,7 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        health = staticClass.player1Health;
         flip();
         if (Input.GetButtonDown("Fire1"))
         {
@@ -130,10 +131,10 @@ public class Movement : MonoBehaviour
     //}
     private void OnDrawGizmos()
     {
-        //Gizmos.DrawWireSphere(attackpoint1.transform.position, attacRadius1);
-        //Gizmos.DrawWireSphere(attackpoint2.transform.position, attacRadius2);
-        //Gizmos.DrawWireSphere(attackpoint3.transform.position, attacRadius3);
-        //Gizmos.DrawWireSphere(attackpoint4.transform.position, attacRadius4);
+        Gizmos.DrawWireSphere(attackpoint1.transform.position, attacRadius1);
+        Gizmos.DrawWireSphere(attackpoint2.transform.position, attacRadius2);
+        Gizmos.DrawWireSphere(attackpoint3.transform.position, attacRadius3);
+        Gizmos.DrawWireSphere(attackpoint4.transform.position, attacRadius4);
         Gizmos.DrawWireSphere(attackpoint5.transform.position, attacRadius5);
     }
     void damage(int d)
